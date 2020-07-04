@@ -1,5 +1,5 @@
 # PongClock
 
-A JavaScript canvas based PongClock
+A JavaScript canvas PongClock
 
 ![](example.gif)
