@@ -7,24 +7,8 @@ class PongClock {
         this._leftBatY = drawElements.canvas.height / 2 - 25;
         this._rightBatY = drawElements.canvas.height / 2 - 25;
 
-        this.resetBall();
-        this.setScore();
-    }
-
-    resetBall() {
-        this._ballInfo = {
-            x: drawElements.canvas.width / 2,
-            y: drawElements.canvas.height / 2,
-            vx: -2,
-            vy: -2
-        }
-    }
-
-    setScore() {
-        let now = new Date();
-
-        this.leftScore = now.getHours();
-        this.rightScore = now.getMinutes();
+        this._resetBall();
+        this._setScore();
     }
 
     update() {
@@ -37,6 +21,22 @@ class PongClock {
         this._updateLeftBat(leftShouldMiss);
         this._checkIfPointWon();
         this._drawScreen();
+    }
+
+    _resetBall() {
+        this._ballInfo = {
+            x: drawElements.canvas.width / 2,
+            y: drawElements.canvas.height / 2,
+            vx: -2,
+            vy: -2
+        }
+    }
+
+    _setScore() {
+        let now = new Date();
+
+        this.leftScore = now.getHours();
+        this.rightScore = now.getMinutes();
     }
 
     _updateBall(rightShouldMiss, leftShouldMiss) {
