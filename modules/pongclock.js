@@ -100,8 +100,8 @@ class PongClock {
 
     _checkIfPointWon() {
         if (this._ballInfo.x < -10 || this._ballInfo.x > this._drawElements.canvas.width) {
-            this.resetBall();
-            this.setScore();
+            this._resetBall();
+            this._setScore();
         }
     }
 
